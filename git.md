@@ -68,3 +68,63 @@ denyCurrentBranch = ignore
 如果使用了git init初始化，则远程仓库的目录下，也包含work tree，当本地仓库向远程仓库push时,   如果远程仓库正在push的分支上（如果当时不在push的分支，就没有问题）, 那么push后的结果不会反应在work tree上,  也即在远程仓库的目录下对应的文件还是之前的内容，必须得使用git reset --hard才能看到push后的内容.   
 
 参考网址：<https://my.oschina.net/u/141149/blog/677294>
+
+###git tag
+如何取得某一个tag的代码？   
+1. git clone 整个代码仓库；      
+2. git checkout tag_name可以取得tag对应的代码；         
+
+此时代码处于“detached HEAD"状态，因为tag是一个快照，是不能更改它的代码的，如果需要在tag代码的基础上修改代码，需要新建分支；  
+git checkout -b branch_name tag_name
+
+###git diff
+基本的git diff输出    
+
+![](https://i.imgur.com/bEzzbGn.png)       
+
+<p>第一行是git diff的header，进行比较的是a版本的.vcxproj（变动前）和b版本的.vcxproj（变动后）。      
+第二行是两个版本的hash值以及文件模式（100644表示是文本文件）。     
+第三、四行表示进行比较的两个文件，---表示变动前的版本，+++表示变动后的版本。
+第五行是一个thunk header（可能会有多个），提供变动的上下文，“-163,6”表示变动前的从163行开始的6行，“+163,7”表示变动后从163行开始的7行。
+接下来几行就是具体的变动内容，它将两个文件的上下文合并显示在一起，每一行前面是一个标识为，“ ”（空）表示无变化（是一个上下文行），“-”表示变动后删除的行，“+”表示变动后增加的行。
+
+###git branch 分支重命名
+* 重命名本地分支    
+重命名当前分支： git branch -m [new name ]           
+重命名其他分支：git branch -m [old name] [new name]     
+
+###push到github时，每次都需要输入用户名和密码
+<p>问题原因：使用了https方式的push   
+在命令行窗口输入：   git remote -v   
+![](https://i.imgur.com/SEQbSNU.png)
+
+<p>下面把https换成ssh方式     
+1. git remote rm origin    
+2. git remote add origin git@github.com:ztchu/testAmbigurity.git    
+3. git push --set-upstream origin master    
+
+###删除远程分支
+<p>向远程分支推送一个空的本地分支即可:     
+**git push origin :OoxmlSerializ1.0.9**
+
+###git apply用法
+
+###git config
+<p>设置自动转换换行符   
+git config --global core.autocrlf    
+git config core.autocrlf     
+*设置本地的自动转换，以及全局的自动转换，本地具有更高的优先级。* 
+  
+<p>查看所有的全局配置  
+git config --global -l   
+<p>编辑git全局配置参数   
+git config --global -e
+
+###获取分支的提交数
+* 获取当前分支的提交数    
+	git rev-list --count HEAD   
+* 获取指定分支的提交数
+	git rev-list --count <branch-name>     
+[https://stackoverflow.com/questions/11657295/count-the-number-of-commits-on-a-git-branch](https://stackoverflow.com/questions/11657295/count-the-number-of-commits-on-a-git-branch)    
+
+

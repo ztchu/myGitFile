@@ -1,3 +1,25 @@
 [submodule "gitignore"]
 	path = gitignore
 	url = https://github.com/ztchu/gitignore.git
+    branch=8e28cc2bdde28ab57c23900bf284bef2a42636c9
+[submodule "x264_demo"]
+	path = x264_demo
+	url = https://github.com/ztchu/x264_demo.git
+	branch = 8f37d9b3a45f2e4ebcd266104367f30a1c8a3028
+[submodule "third_party/jsoncpp"]
+	path = third_party/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp
+	branch = 75b360af4ae3949c003e39d57dad43238e3178c2
+[submodule "third_party/ffmpeg_demo"]
+	path = third_party/ffmpeg_demo
+	url = https://gitee.com/leixiaohua1020/simplest_ffmpeg_player.git
+[submodule "third_party/leetcode"]
+	path = third_party/leetcode
+	url = git@github.com:ztchu/leetcode.git
+	branch = 8bffc2949aae0dc7f3e7f8628d6615edfcab7ad7
+[submodule "third_party/algorithm"]
+	path = third_party/algorithm
+	url = git@github.com:ztchu/algorithm.git
+[submodule "third_party/unix_advan"]
+	path = third_party/unix_advan
+	url = git@github.com:ztchu/unix_advan.git

@@ -23,3 +23,12 @@
 [submodule "third_party/unix_advan"]
 	path = third_party/unix_advan
 	url = git@github.com:ztchu/unix_advan.git
+	branch = bc7cd21ee4f959a086712a3ebad0b112b6e02c50
+[submodule "third_party/nlohman"]
+	path = third_party/nlohman
+	url = git@github.com:nlohmann/json.git
+	branch = master
+[submodule "third_party/CicadaPlayer"]
+	path = third_party/CicadaPlayer
+	url = git@github.com:ztchu/CicadaPlayer.git
+	branch = develop
